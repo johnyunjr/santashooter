@@ -8,7 +8,7 @@ var Engine = Matter.Engine,
     MouseConstraint = Matter.MouseConstraint,
     Events = Matter.Events;
 
-// create a Matter.js engine
+// create a Matter.js engine and include a background image
 var engine = Engine.create(document.body, {
   render: {
     options: {
@@ -19,7 +19,7 @@ var engine = Engine.create(document.body, {
   }
 });
 
-// add a mouse controlled constraint for slingshot
+// add a mouse controlled constraint for the slingshot
 var mouse = MouseConstraint.create(engine, {
     constraint: {stiffness: 1}
 });
@@ -53,7 +53,6 @@ var pyramidBonus = Composites.pyramid(650, 150, 5, 5, 0, 0, function(x, y) {
 
 // creates the ground the stacks will sit on
 var ground = Bodies.rectangle(490, 610, 600, 60, { isStatic: true });
-
 var bonus = Bodies.rectangle(700, 220, 80, 5, { isStatic: true });
 
 // create the Santa ball
@@ -65,6 +64,8 @@ var ballOptions = {
       } 
     };
 var ball = Bodies.circle(90, 435, 20, ballOptions);
+
+//will position the first Santa head to be shot
 var start = Constraint.create({ 
         pointA: { x: 90, y: 435 }, 
         bodyB: ball, 
