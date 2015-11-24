@@ -36,7 +36,7 @@ var stack = Composites.stack(450, 230, 7, 15, 30, 0, function(x, y) {
       }
     } 
   });
-})
+});
 
 // creates a bonus stack which is harder to hit
 var pyramidBonus = Composites.pyramid(650, 150, 5, 5, 0, 0, function(x, y) {
@@ -49,7 +49,7 @@ var pyramidBonus = Composites.pyramid(650, 150, 5, 5, 0, 0, function(x, y) {
         } 
       } 
     });
-})
+});
 
 // creates the ground the stacks will sit on
 var ground = Bodies.rectangle(490, 610, 600, 60, { isStatic: true });
