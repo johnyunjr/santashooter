@@ -26,7 +26,7 @@ var mouse = MouseConstraint.create(engine, {
 
 
 // add a stack of blocks for Santa to hit
-var stack = Composites.stack(450, 200, 7, 15, 30, 0, function(x, y) {
+var stack = Composites.stack(450, 230, 7, 15, 30, 0, function(x, y) {
   return Bodies.rectangle(x, y, 20, 20, { 
     friction: 0.1, 
     restitution: 1,
@@ -38,8 +38,23 @@ var stack = Composites.stack(450, 200, 7, 15, 30, 0, function(x, y) {
   });
 })
 
-// creates the ground the stack will sit on
+// creates a bonus stack which is harder to hit
+var pyramidBonus = Composites.pyramid(650, 150, 5, 5, 0, 0, function(x, y) {
+    return Bodies.rectangle(x, y, 20, 20, { 
+      friction: 0.1,
+      restitution: 0.5,
+      render: { 
+        sprite: { 
+          texture: 'img/present.png' 
+        } 
+      } 
+    });
+})
+
+// creates the ground the stacks will sit on
 var ground = Bodies.rectangle(490, 610, 600, 60, { isStatic: true });
+
+var bonus = Bodies.rectangle(700, 220, 80, 5, { isStatic: true });
 
 // create the Santa ball
 var ballOptions = { 
@@ -58,7 +73,7 @@ var start = Constraint.create({
 
 
 // add all of the bodies to the world
-World.add(engine.world, [stack, ball, ground, start, mouse]);
+World.add(engine.world, [stack, ball, ground, bonus, pyramidBonus, start, mouse]);
 
 //creates the walls within the game
 var margin = 5;
