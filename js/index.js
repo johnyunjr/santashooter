@@ -65,7 +65,7 @@ var ballOptions = {
     };
 var ball = Bodies.circle(90, 435, 20, ballOptions);
 
-//will position the first Santa head to be shot
+//will position the first Santa head to be shot so that it will not dall down due to gravity
 var start = Constraint.create({ 
         pointA: { x: 90, y: 435 }, 
         bodyB: ball, 
