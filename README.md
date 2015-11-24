@@ -9,5 +9,7 @@ My example that I created is a humorous slingshot kind-of-game, it uses a Santa 
 To run my slingshot game, you first drag and pull the santa head down like a slingshot/catapult, and then release to shoot it over the wall and hopefully hit the stack of presents (boxes).
 
 To leann more about Matter.js, visit http://brm.io/matter-js/ **for the library**
+
 http://brm.io/matter-js-demo/ **for more examples/demos**
+
 https://github.com/liabru/matter-js/wiki/Getting-started **to learn how to start using Matter.js**
